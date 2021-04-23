@@ -15,7 +15,7 @@ class Remove extends React.Component {
         console.timeEnd("test");
     }
 
-    hasBeenClicked(){
+    handleClick(){
         this.setState({
             show : false
         })
@@ -26,7 +26,7 @@ class Remove extends React.Component {
         if(this.state.show){
             return (
                 <div>
-                    <button onClick={this.hasBeenClicked.bind(this)}>Remove elements</button>
+                    <button onClick={this.handleClick.bind(this)}>Remove elements</button>
                     {
                         [...Array(1000)].map((e,i) => {
                             return (

@@ -1,18 +1,28 @@
 <script>
-    import { onMount } from 'svelte';
+    import { afterUpdate, onMount } from 'svelte';
 
-    console.time("test")
+    let show = false;
 
-    onMount(() => {
+    afterUpdate(() => {
         console.timeEnd("test")
-    });
+    })
 
+    function handleClick(){
+        show = true
+        console.time("test")
+    }
 </script>
 
-<div>
-	{#each [...Array(1000)] as _, i}
-        <div>
-            <p>{i}</p>
-        </div>
-	{/each}
-</div>
+{#if show}
+	<div>
+        {#each [...Array(1000)] as _, i}
+            <div>
+                <p>{i}</p>
+            </div>
+        {/each}
+    </div>
+{:else}
+    <div>
+        <button on:click={handleClick}>Insert elements</button>
+    </div>
+{/if}

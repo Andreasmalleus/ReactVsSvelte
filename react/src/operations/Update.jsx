@@ -14,7 +14,7 @@ class Update extends React.Component {
         console.timeEnd("test");
     }
 
-    hasBeenClicked(){
+    handleClick(){
         this.setState({
             title : Math.random().toString(36).substr(2, 5)
         })
@@ -24,7 +24,7 @@ class Update extends React.Component {
     render(){
         return (
             <div>
-                <button onClick={this.hasBeenClicked.bind(this)}>Update elements</button>
+                <button onClick={this.handleClick.bind(this)}>Update elements</button>
                 {
                     [...Array(1000)].map((e,i) => {
                         return (

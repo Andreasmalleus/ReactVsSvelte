@@ -6,7 +6,7 @@ import Remove from "./operations/Remove.jsx";
 
 const App = () => {
     return (
-        <Remove/>
+        <Insert/>
     )
 }
 

@@ -4,4 +4,4 @@
     import Remove from "./operations/Remove.svelte"
 </script>
 
-<Remove/>
+<Update/>
